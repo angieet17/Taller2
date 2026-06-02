@@ -1,0 +1,145 @@
+:root {
+    /*"""pseudoclase"""*/
+    --primary-color: #070707;
+    --secondary-color: #585b5d;
+    --text-color: #333;
+    --bg-color: #f4f7f6;
+    --text-white-color: #fff;
+    --font-family: 'Arial', sans-serif;
+
+}
+
+* {
+    /*selector universal ( una agrupacion general para todos los el*/
+    box-sizing: border-box;
+    /**/
+    margin: 0;
+    /*es lo que esta en la parte externa*/
+    padding: 0;
+    /*es lo que esta entre el border y el elemento*/
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.container-cv {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    /*Para agregarle sombra  al contenedor*/
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-white-color);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+header h2 {
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /*Estilo del titulo, en mayuscula*/
+    margin-bottom: 5px;
+
+}
+
+.profile-img {
+    width: 172px;
+    height: 225px;
+    border-radius: 50%;
+    /*border redondo*/
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+    /*cubra por completo el logo*/
+    background-color: var(--bg-color);
+    /*color del fondo del logo*/
+}
+
+.icon {
+    display: flex;
+    gap: 20px;
+    /* sirve para crear separacion entre elementos que estan dentro de: display: flex; o display: grid-column-start: */
+    justify-content: center;
+}
+
+.separator {
+    border: none;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+section {
+    background-color: #f4f7f6;
+    color: var(--primary-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.4);
+}
+
+.content-box {
+    background-color: #dddfe3;
+}
+
+section div {
+    border-left: 3px solid black;
+    padding-left: 15px;
+}
+
+.experience-list ul {
+
+    padding-left: 5px;
+}
+
+#certificate div img {
+    width: 120px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 25%;
+}
+
+#skill div span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 8px;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-white-color)
+}
+
+footer {
+    background: #060606;
+    color: var(--text-white-color);
+    text-align: center;
+    padding: 20px;
+    /*espacio entre el elemnto y el borde*/
+    font-size: 0.8rem;
+}
+
+@media(min-width: 768px) {
+    header {
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-start;
+        padding: 40px 60px;
+    }
+
+    .header-txt {
+        margin-left: 10px;
+
+    }
+}

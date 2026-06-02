@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #f7e6d2;
+    --secondary-color: #b76e4d;
+    --text-color: #3e2c23;
+    --bg-color: #eadbc8;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img, video, iframe, audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* BODY */
+body {
+    background-color: var(--primary-color);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    padding: 15px;
+    line-height: 1.6;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+/* MENU */
+.container ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: white;
+    background: #8f4f33;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ================= MAIN ================= */
+.main {
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.article,
+.box-model {
+    background: var(--bg-color);
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+/* ================= GRID INDEX ================= */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-cell {
+    background: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ================= MULTIMEDIA GRID ================= */
+.container-box {
+    width: 100%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-box div {
+    background: var(--primary-color);
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+/* multimedia media */
+@media (min-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+    }
+
+    .container ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    /* GRID INDEX */
+    .grid {
+        grid-template-columns: 200px 1fr 1fr;
+    }
+
+    /* MULTIMEDIA */
+    .container-box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .audio {
+        grid-column: 1 / 3;
+    }
+
+    .video {
+        grid-column: 3 / 5;
+    }
+}
