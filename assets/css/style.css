@@ -17,19 +17,13 @@ img, video, iframe, audio {
     height: auto;
 }
 
-/* BODY */
+/* ================= BODY ================= */
 body {
     background-color: var(--primary-color);
     font-family: Arial, sans-serif;
     color: var(--text-color);
-    padding: 15px;
+    padding: 20px;
     line-height: 1.6;
-}
-
-/* CONTENEDOR GENERAL */
-.container {
-    max-width: 1200px;
-    margin: auto;
 }
 
 /* ================= HEADER ================= */
@@ -37,11 +31,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 20px 0;
+    gap: 20px;
 }
 
-/* MENU */
+.nav {
+    width: 80%;
+    margin: auto;
+}
+
 .container ul {
     display: flex;
     flex-direction: column;
@@ -54,6 +51,7 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .nav a:hover {
@@ -65,56 +63,108 @@ body {
 
 /* ================= MAIN ================= */
 .main {
-    width: 100%;
-    margin: 20px auto;
-    padding: 15px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
 }
 
 .article,
 .box-model {
     background: var(--bg-color);
-    margin: 15px 0;
-    padding: 15px;
+    margin: 20px 0;
+    padding: 20px;
     border-radius: 10px;
 }
 
-/* ================= FOOTER ================= */
-.footer {
-    width: 100%;
-    margin-top: 20px;
-    background: var(--secondary-color);
+/* ================= BOX MODEL (COLORES DEL PROFESOR) ================= */
+.margin {
+    background: #f4c430;
+    padding: 20px;
     text-align: center;
-    padding: 15px;
-    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-/* ================= GRID INDEX ================= */
+.border {
+    background: #dbeafe;
+    border: 5px solid #999;
+    padding: 15px;
+}
+
+.padding {
+    background: #4ade80;
+    padding: 20px;
+}
+
+.content {
+    background: white;
+    padding: 40px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+/* ================= GRID (MODELO DEL PROFESOR) ================= */
 .grid {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "section1"
+        "section2"
+        "footer";
     gap: 10px;
     margin-top: 20px;
 }
 
 .grid-cell {
-    background: var(--secondary-color);
-    color: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     text-align: center;
+    font-weight: bold;
+    color: white;
 }
 
-/* ================= MULTIMEDIA GRID ================= */
+.header-cell {
+    background: #f4d35e;
+    grid-area: header;
+}
+
+.aside-cell {
+    background: #6a4c93;
+    grid-area: aside;
+}
+
+.main-cell {
+    background: #264653;
+    grid-area: main;
+}
+
+.section1 {
+    background: #2a9d8f;
+    grid-area: section1;
+}
+
+.section2 {
+    background: #2a9d8f;
+    grid-area: section2;
+}
+
+.footer-cell {
+    background: #1a1a1a;
+    grid-area: footer;
+}
+
+/* ================= MULTIMEDIA ================= */
 .container-box {
-    width: 100%;
-    margin: 20px auto;
+    width: 80%;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
     background: var(--bg-color);
     padding: 10px;
-    border-radius: 10px;
 }
 
 .container-box div {
@@ -124,23 +174,98 @@ body {
     text-align: center;
 }
 
-/* multimedia media */
+/* ================= CONTACTO ================= */
+.contacto-grid {
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "section1"
+        "section2"
+        "footer";
+}
+
+.contacto-grid > * {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+}
+
+.contacto-header {
+    grid-area: header;
+    background: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacto-header ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.contacto-header a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.contacto-aside {
+    grid-area: aside;
+    background: #a67c6b;
+    color: white;
+}
+
+.contacto-main {
+    grid-area: main;
+    background: #ffffff;
+}
+
+.contacto-section1,
+.contacto-section2 {
+    background: #d9c2b0;
+}
+
+.contacto-footer {
+    grid-area: footer;
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    width: 80%;
+    margin: auto;
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (min-width: 768px) {
 
-    /* HEADER */
-    .header {
-        flex-direction: column;
-    }
-
+    /* MENU */
     .container ul {
         flex-direction: row;
         justify-content: center;
-        gap: 25px;
+        gap: 30px;
     }
 
-    /* GRID INDEX */
+    /* GRID PROFESOR */
     .grid {
         grid-template-columns: 200px 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "aside main main"
+            "aside section1 section2"
+            "footer footer footer";
     }
 
     /* MULTIMEDIA */
@@ -154,5 +279,15 @@ body {
 
     .video {
         grid-column: 3 / 5;
+    }
+
+    /* CONTACTO RESPONSIVE */
+    .contacto-grid {
+        grid-template-columns: 250px 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "aside main main"
+            "aside section1 section2"
+            "footer footer footer";
     }
 }
